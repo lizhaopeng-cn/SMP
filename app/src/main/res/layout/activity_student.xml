@@ -10,22 +10,104 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="50dp"
             android:drawableLeft="@android:drawable/ic_menu_search"
-            android:hint="请输入姓名或学号搜索"/>
+            android:hint="请输入学号搜索"/>
 
         <Button
+            android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="搜索"/>
 
         <Button
+            android:id="@+id/btn_recovery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="更多功能"/>
+            android:layout_marginLeft="5dp"
+            android:text="恢复搜前"/>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="名次"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="学号"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="姓名"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_c"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="C++"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_english"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="英语"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_math"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="数学"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="总分"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_ave"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="平均分"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/more"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

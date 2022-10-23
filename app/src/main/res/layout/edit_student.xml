@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/tv_num"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/tv_c"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/tv_english"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/tv_math"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/tv_all"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/tv_ave"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

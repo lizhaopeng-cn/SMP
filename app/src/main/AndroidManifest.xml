@@ -21,21 +21,15 @@
         </activity>
 
         <activity
-            android:name=".view.AdministratorActivity"
-            android:exported="true"
-            tools:ignore="DuplicateActivity">
+            android:name=".view.AdministratorActivity">
         </activity>
 
         <activity
-            android:name=".view.TeacherActivity"
-            android:exported="true"
-            tools:ignore="DuplicateActivity,Instantiatable">
+            android:name=".view.TeacherActivity">
         </activity>
 
         <activity
-            android:name=".view.StudentActivity"
-            android:exported="true"
-            tools:ignore="DuplicateActivity,Instantiatable">
+            android:name=".view.StudentActivity">
         </activity>
     </application>
 

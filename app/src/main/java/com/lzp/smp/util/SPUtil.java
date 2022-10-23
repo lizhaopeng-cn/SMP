@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SPUtil {
+    public static final String KEY_STUDENT = "key_student";
+    public static final String KEY_TEACHER = "key_teacher";
+    public static final String KEY_ADMINISTRATOR = "key_administrator";
     private static volatile SPUtil instance;
     private SharedPreferences sp;
 

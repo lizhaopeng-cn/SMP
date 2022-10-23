@@ -2,6 +2,7 @@ package com.lzp.smp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -32,7 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+//        Intent intent = new Intent(LoginActivity.this, StudentActivity.class);
+//        startActivity(intent);
         et_account = findViewById(R.id.et_account);
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
@@ -81,13 +83,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goLogin() {
-        if (type == 1) {
-            Toast.makeText(this, "跳到教师页面", Toast.LENGTH_LONG).show();
-        } else if (type == 2) {
-            Toast.makeText(this, "跳到学生页面", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "跳到管理员页面", Toast.LENGTH_LONG).show();
-        }
+//        if (type == 1) {
+//            Toast.makeText(this, "跳到教师页面", Toast.LENGTH_LONG).show();
+//        } else if (type == 2) {
+//            Toast.makeText(this, "跳到学生页面", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(this, "跳到管理员页面", Toast.LENGTH_LONG).show();
+//        }
+        Intent intent = new Intent(LoginActivity.this, StudentActivity.class);
+        startActivity(intent);
     }
 
     private void addAccountToDB(String accountStr, String passwordStr) {
