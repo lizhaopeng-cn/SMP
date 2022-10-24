@@ -50,7 +50,6 @@ public class StudentActivity extends AppCompatActivity {
     private RecyclerView rvStudent;
     private StudentAdapter studentAdapter;
     private ArrayList<StudentEntity> datas;
-    //    private String[] array = {"从文件读取", "输出到文件", "按当前排序插入", "清空"};
     private String[] array = {"从文件读取", "按当前排序插入", "清空", "总分降序", "总分升序", "C++降序", "C++升序", "英语降序", "英语升序", "数学降序", "数学升序", "不及格人数统计"};
     private String[] arrayItem = {"删除", "修改"};
 
@@ -99,6 +98,7 @@ public class StudentActivity extends AppCompatActivity {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 搜索功能
                 String str = et_search.getText().toString();
                 if (TextUtils.isEmpty(str)) {
                     Toast.makeText(StudentActivity.this, "请输入搜索条件", Toast.LENGTH_LONG).show();
@@ -116,6 +116,8 @@ public class StudentActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // 回退到搜索前数据信息
         btn_recovery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +137,7 @@ public class StudentActivity extends AppCompatActivity {
         rvStudent.setAdapter(studentAdapter);
     }
 
+    // 学生列表展示
     public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyHolder> {
 
         @Override
@@ -194,6 +197,7 @@ public class StudentActivity extends AppCompatActivity {
         }
     }
 
+    // 展示更多功能
     public void showMore() {
         AlertDialog.Builder builder = new AlertDialog.Builder(StudentActivity.this);
         builder.setItems(array, new DialogInterface.OnClickListener() {
@@ -254,6 +258,7 @@ public class StudentActivity extends AppCompatActivity {
         builder.show();
     }
 
+    // 不及格人数统计
     private void failNum() {
         View viewDia = LayoutInflater.from(StudentActivity.this).inflate(R.layout.dlg_fail_num, null);
         TextView tvC = viewDia.findViewById(R.id.tv_c);
@@ -291,7 +296,7 @@ public class StudentActivity extends AppCompatActivity {
         builder.show();
     }
 
-    // 插入学生信息
+    // 插入或更改学生信息
     private void studentInsertUpdate(boolean isUpdate,int position, String num, String name, String c, String english, String math) {
         View viewDia = LayoutInflater.from(StudentActivity.this).inflate(R.layout.edit_student, null);
         TextView tvRank = viewDia.findViewById(R.id.tv_rank);
@@ -443,6 +448,7 @@ public class StudentActivity extends AppCompatActivity {
         builder.show();
     }
 
+    // 展示每个条目中的更多选项
     public void showMoreItem(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(StudentActivity.this);
         builder.setItems(arrayItem, new DialogInterface.OnClickListener() {
@@ -463,14 +469,25 @@ public class StudentActivity extends AppCompatActivity {
         builder.show();
     }
 
+    // 保存数据到文件中
     public void save() {
         String studentsStr = GsonUtils.gsonToString(datas);
         SPUtil.getInstance(this).setValue(SPUtil.KEY_STUDENT, studentsStr);
     }
 
+    // 获取文件最新数据
     public ArrayList<StudentEntity> getNewest() {
+        ArrayList<StudentEntity> datas;
         String studentsStr = SPUtil.getInstance(this).getValue(SPUtil.KEY_STUDENT);
-        ArrayList<StudentEntity> datas = (ArrayList<StudentEntity>) GsonUtils.jsonToList(studentsStr, StudentEntity.class);
+        if (TextUtils.isEmpty(studentsStr)) {
+            return new ArrayList<>();
+        }
+        try {
+            datas = (ArrayList<StudentEntity>) GsonUtils.jsonToList(studentsStr, StudentEntity.class);
+        } catch (Exception e){
+            e.printStackTrace();
+            datas = new ArrayList<>();
+        }
         return datas;
     }
 
